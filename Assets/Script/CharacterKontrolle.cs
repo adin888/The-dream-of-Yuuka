@@ -17,6 +17,7 @@ public class CharacterKontrolle : MonoBehaviour
     int m_facingDirection = 1;
     bool isOnGround = true;
     bool m_moving;
+    public bool onGround { get { return isOnGround; } }
     // Start is called before the first frame update
     void Start()
     {

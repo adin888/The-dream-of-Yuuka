@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroundSensor : MonoBehaviour
 {
-    private int m_ColCount = 0;
+    [SerializeField] private int m_ColCount = 0;
 
     private float m_DisableTimer;
 
@@ -22,13 +22,14 @@ public class GroundSensor : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        //CharacterKontrolle controller = transform.Find("Hero").GetComponent<CharacterKontrolle>();
+        //if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Wall") )
             m_ColCount++;
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        //if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Wall"))
             m_ColCount--;
     }
 
