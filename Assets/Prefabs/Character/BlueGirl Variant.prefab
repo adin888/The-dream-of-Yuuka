@@ -62,6 +62,37 @@ Transform:
   m_Father: {fileID: 4338045080228187443}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1980853899
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1980853900}
+  m_Layer: 0
+  m_Name: EdgeSensor
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1980853900
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980853899}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.179, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4338045080228187443}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &6643271333315269164
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70,20 +101,48 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+      propertyPath: dashTime
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+      propertyPath: dashSpeed
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+      propertyPath: jumpForce
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
       propertyPath: wallCheck
       value: 
       objectReference: {fileID: 276189721}
+    - target: {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+      propertyPath: ledgeCheck
+      value: 
+      objectReference: {fileID: 1980853900}
     - target: {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
       propertyPath: groundCheck
       value: 
       objectReference: {fileID: 7069169241848309863}
     - target: {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+      propertyPath: dashCoolDown
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
       propertyPath: wallHopForce
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+      propertyPath: amountOfJumps
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
       propertyPath: wallJumpForce
-      value: 20
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+      propertyPath: canWallSliding
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
       propertyPath: wallSlideSpeed
@@ -121,6 +180,10 @@ PrefabInstance:
       propertyPath: whatIsGround.m_Bits
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+      propertyPath: distanceBetweenImages
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 4479709353589783115, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.304
@@ -128,6 +191,14 @@ PrefabInstance:
     - target: {fileID: 6918216294255501084, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
       propertyPath: m_Name
       value: BlueGirl
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918216294255501084, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918216294255501084, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 6918216294255501085, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
       propertyPath: m_Controller
@@ -137,6 +208,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 126277558, guid: 745e6348d05bb5c44b8d8b297b65f2b2, type: 3}
+    - target: {fileID: 6918216294255501086, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6918216294255501086, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 352309939
+      objectReference: {fileID: 0}
     - target: {fileID: 6918216294255501087, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -243,23 +322,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4338045080228187440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07af71363ecf0f84c988b3dcbb416609, type: 3}
+  m_Script: {fileID: 11500000, guid: 609635cc82c1f524c8f162bcf16f4ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_animator: {fileID: 4338045080228187441}
-  AttackPoint: {fileID: 1779212467}
-  enemyLayers:
+  combatEnabled: 1
+  inputTimer: 0.2
+  attack1Radius: 0.24
+  attack1Damage: 10
+  attack1HitBoxPos: {fileID: 1779212467}
+  whatIsDamageable:
     serializedVersion: 2
     m_Bits: 64
-  attackRange: 0.3
-  attackDamage: 40
-  attackRate: 2
-  numOfAttackFrames: 0
---- !u!95 &4338045080228187441 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 6918216294255501085, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
-  m_PrefabInstance: {fileID: 6643271333315269164}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4338045080228187443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6918216294255501087, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
