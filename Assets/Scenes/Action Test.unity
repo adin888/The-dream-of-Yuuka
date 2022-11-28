@@ -3924,10 +3924,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1844895205, guid: 79f245730e35161449b8b9a6b6bd4e9b, type: 3}
-      propertyPath: whatIsDamageable.m_Bits
-      value: 512
-      objectReference: {fileID: 0}
     - target: {fileID: 4338045080228187440, guid: 79f245730e35161449b8b9a6b6bd4e9b, type: 3}
       propertyPath: m_Name
       value: BlueGirl

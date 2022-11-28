@@ -307,6 +307,8 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7701919866978963509, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
     - {fileID: 4638879711698975542, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+    - {fileID: 6963735141401887347, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
+    - {fileID: 30662769, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
 --- !u!1 &4338045080228187440 stripped
 GameObject:
@@ -322,17 +324,59 @@ MonoBehaviour:
   m_GameObject: {fileID: 4338045080228187440}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 609635cc82c1f524c8f162bcf16f4ad0, type: 3}
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  combatEnabled: 1
-  inputTimer: 0.2
-  attack1Radius: 0.24
-  attack1Damage: 10
-  attack1HitBoxPos: {fileID: 1779212467}
-  whatIsDamageable:
-    serializedVersion: 2
-    m_Bits: 64
+  m_Actions: {fileID: -944628639613478452, guid: d4a553559e773874699cd0d9ee145b45, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 717bd774-5a18-42e7-8199-da7a54051654
+    m_ActionName: Playing/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 77f84026-c587-4f83-b07f-e6dbfd860deb
+    m_ActionName: Playing/Jump[/Keyboard/space]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard
+  m_DefaultActionMap: Playing
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!4 &4338045080228187443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6918216294255501087, guid: 862b2c35d24f39a4c8baec7b6b37861e, type: 3}
