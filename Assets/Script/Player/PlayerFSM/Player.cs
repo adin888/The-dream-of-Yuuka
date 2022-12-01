@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public Rigidbody2D M_RB { get; private set; }
     public BoxCollider2D M_Collider { get; private set; }
     public InputHandler M_InputHandler { get; private set; }
+    public Core M_Core { get; private set; }
     #endregion
 
     #region Unity Callback Functions
