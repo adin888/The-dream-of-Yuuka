@@ -25,10 +25,12 @@ public class Player : MonoBehaviour
     #region Unity Callback Functions
     private void Awake()
     {
+        M_Core = GetComponentInChildren<Core>();
         StateMachine = new PlayerStateMachine();
 
         IdleState = new PlayerIdleState(this, StateMachine, playerData, "idle");
         MoveState = new PlayerMoveState(this, StateMachine, playerData, "move");
+
     }
     private void Start()
     {
@@ -42,11 +44,16 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        M_Core.LogicUpdate();
         StateMachine.CurrentState.LogicUpdate();
     }
     private void FixedUpdate()
     {
         StateMachine.CurrentState.PhysicsUpdate();
     }
+
+    private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
+
+    public virtual void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
     #endregion
 }

@@ -16,7 +16,7 @@ public class PlayerIdleState : PlayerGroundedState
     public override void Enter()
     {
         base.Enter();
-        m_Movement?.SetVelocityX(0f);
+        M_Movement?.SetVelocityX(0f);
     }
 
     public override void Exit()
@@ -34,10 +34,10 @@ public class PlayerIdleState : PlayerGroundedState
             {
                 stateMachine.ChangeState(player.MoveState);
             }
-            else if(yInput==-1)
+            /*else if(yInput==-1)
             {
                 stateMachine.ChangeState(player.CrouchIdleState);
-            }
+            }*/
         }
     }
 

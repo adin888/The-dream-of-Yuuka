@@ -13,7 +13,7 @@ public class PlayerGroundedState : PlayerState
     {
         get => m_Movement ?? m_Core.GetCoreComponent(ref m_Movement);
     }
-    protected Movement m_Movement;
+    public Movement m_Movement;
 
     private bool jumpInput;
     private bool grabInput;
@@ -22,7 +22,8 @@ public class PlayerGroundedState : PlayerState
     private bool isGrounded;
     private bool isTouchingWall;
     private bool isTouchingLedge;
-    public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
+    public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, 
+        string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
 
@@ -50,5 +51,10 @@ public class PlayerGroundedState : PlayerState
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
+    }
+
+    public override void DoChecks()
+    {
+        base.DoChecks();
     }
 }
