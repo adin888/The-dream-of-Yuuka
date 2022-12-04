@@ -9,6 +9,9 @@ public class Player : MonoBehaviour
 
     public PlayerIdleState IdleState { get; private set; }
     public PlayerMoveState MoveState { get; private set; }
+    public PlayerInAirState InAirState { get; private set; }
+    public PlayerJumpState JumpState { get; private set; }
+    public PlayerLandState LandState { get; private set; }
 
     [SerializeField]
     private PlayerData playerData;
@@ -22,6 +25,10 @@ public class Player : MonoBehaviour
     public Core M_Core { get; private set; }
     #endregion
 
+    #region Ohter Variables
+    private Vector2 workspace;
+
+    #endregion
     #region Unity Callback Functions
     private void Awake()
     {
@@ -30,6 +37,9 @@ public class Player : MonoBehaviour
 
         IdleState = new PlayerIdleState(this, StateMachine, playerData, "idle");
         MoveState = new PlayerMoveState(this, StateMachine, playerData, "move");
+        InAirState = new PlayerInAirState(this, StateMachine, playerData, "inAir");
+        JumpState = new PlayerJumpState(this, StateMachine, playerData, "inAir");
+        LandState = new PlayerLandState(this, StateMachine, playerData, "land");
 
     }
     private void Start()
@@ -51,7 +61,8 @@ public class Player : MonoBehaviour
     {
         StateMachine.CurrentState.PhysicsUpdate();
     }
-
+    #endregion
+    #region Other Functions
     private void AnimationTrigger() => StateMachine.CurrentState.AnimationTrigger();
 
     public virtual void AnimationFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
