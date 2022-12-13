@@ -64,7 +64,7 @@ public class PlayerGroundedState : PlayerState
         }
         else if(isTouchingWall && grabInput && isTouchingLedge)
         {
-            //stateMachine.ChangeState(player.WallGrabState);
+            stateMachine.ChangeState(player.WallGrabState);
         }
         //else if(dashInput && player.DashState)
 

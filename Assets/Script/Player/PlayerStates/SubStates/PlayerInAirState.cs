@@ -85,8 +85,8 @@ public class PlayerInAirState : PlayerState
         {
             StopWallJumpCoyoteTime();
             isTouchingWall = M_CollisionSenses.WallFront;
-            //player.WallJumpState
-            //stateMachine.ChangeState(WallJumpState);
+            player.WallJumpState.DetermineWallJumpDirection(isTouchingWall);
+            stateMachine.ChangeState(player.WallJumpState);
         }
         else if(jumpInput && player.JumpState.CanJump())
         {
