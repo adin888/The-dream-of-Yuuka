@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     public PlayerWallSlideState WallSlideState { get; private set; }
     public PlayerCrouchIdleState CrouchIdleState { get; private set; } 
     public PlayerCrouchMoveState CrouchMoveState { get; private set; }
+    public PlayerDashState DashState { get; private set; }
 
 
     [SerializeField]
@@ -28,7 +29,6 @@ public class Player : MonoBehaviour
     #region Components
     public Animator M_Anim { get; private set; }
     public Rigidbody2D M_RB { get; private set; }
-    public BoxCollider2D M_Collider { get; private set; }
     public InputHandler M_InputHandler { get; private set; }
     public Transform DashDirectionIndicator { get; private set; }
     public BoxCollider2D MovementCollider { get; private set; }
@@ -57,14 +57,15 @@ public class Player : MonoBehaviour
         WallSlideState = new PlayerWallSlideState(this, StateMachine, playerData, "wallSlide");
         CrouchIdleState = new PlayerCrouchIdleState(this, StateMachine, playerData, "crouchIdle");
         CrouchMoveState = new PlayerCrouchMoveState(this, StateMachine, playerData, "crouchMove");
+        DashState = new PlayerDashState(this, StateMachine, playerData, "inAir");
     }
     private void Start()
     {
         M_Anim = GetComponent<Animator>();
         M_RB = GetComponent<Rigidbody2D>();
-        M_Collider = GetComponent<BoxCollider2D>();
+        MovementCollider = GetComponent<BoxCollider2D>();
         M_InputHandler = GetComponent<InputHandler>();
-
+        DashDirectionIndicator = transform.Find("DashDirectionIndicator");
 
         StateMachine.Initialize(IdleState);
     }

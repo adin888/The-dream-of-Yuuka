@@ -133,7 +133,7 @@ public class PlayerInAirState : PlayerState
 
         if(isTouchingWall && isTouchingLedge)
         {
-            //player.LedgeClimbState
+            player.LedgeClimbState.SetDetectedPosition(player.transform.position);
         }
 
         if(!wallJumpCoyoteTime && !isTouchingWall && !isTouchingWallBack && (oldIsTouchingWall || oldIsTouchingWallBack))
